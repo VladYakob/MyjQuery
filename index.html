@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Выравнивание по центру</title>
+<style>
+.input {
+   margin-bottom: 10px;
+   outline: 0;
+}
+
+.activ {
+  border: 1px solid red;
+}
+
+
+</style>
+</head>
+<body>
+
+<input type="text" class="one  input"><br> 
+<input type="text" class="two  input"><br>
+<input type="text" class="tree input"><br>
+<button input="button input">Нажми меня</button>
+
+
+<!---->
+<script>
+
+function $(element){
+  var arr = document.querySelectorAll(element);
+  return new myJqbery(arr);
+}
+
+function myJqbery(arr){ 
+  this.elements = arr;
+  this.on = function(event, f){
+    for(var i = 0; i < this.elements.length; i++){
+      this.elements[i].addEventListener(event, f);
+    }
+  },
+  this.addClass = function(name){
+    for(var i = 0; i < this.elements.length; i++){
+      this.elements[i].classList.add(name);
+    }
+    return this;
+  }
+
+ ;
+}
+
+
+
+$('.input').on('blur', function(){
+  this.classList.toggle('activ');
+});
+
+$('.input').on('focus', function(){
+  this.classList.toggle('activ');
+});
+
+$('.input').addClass('a').addClass('b');
+
+
+
+
+
+</script>
+</body>
+</html>
