@@ -24,31 +24,14 @@
 <button input="button input">Нажми меня</button>
 
 
+<div class="textDiv">россмейстеры, покиньте помещение, это не для вас. Мы уже поняли, что вы очень крутые шахматисты,
+   дайте другим людям посмотреть. Именно такие легкие комбинации вызывают желание у людей далеких от
+    шахмат поиграть в них, ведь всем хочется победить своего друга или папу подловив на чем-то эдаком,
+   причем сделать это быстро. А вы со своими скучными лицами только портите воздух
+  </div>
 <!---->
+<script src="myJq.js" type="text/javascript"></script>
 <script>
-
-function $(element){
-  var arr = document.querySelectorAll(element);
-  return new myJqbery(arr);
-}
-
-function myJqbery(arr){ 
-  this.elements = arr;
-  this.on = function(event, f){
-    for(var i = 0; i < this.elements.length; i++){
-      this.elements[i].addEventListener(event, f);
-    }
-  },
-  this.addClass = function(name){
-    for(var i = 0; i < this.elements.length; i++){
-      this.elements[i].classList.add(name);
-    }
-    return this;
-  }
-
- ;
-}
-
 
 
 $('.input').on('blur', function(){
@@ -59,10 +42,14 @@ $('.input').on('focus', function(){
   this.classList.toggle('activ');
 });
 
-$('.input').addClass('a').addClass('b');
 
 
-
+$('.textDiv').on('click', function(){
+  $(this).fade(1000, function(){
+    this.style.opacity = 1;
+    this.style.display = "block";
+  });
+})
 
 
 </script>
